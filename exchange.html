@@ -115,6 +115,20 @@
   </footer>
 
 </main>
+<script>
+(function () {
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+
+  const onScroll = () => {
+    if (window.scrollY > 10) nav.classList.add('is-scrolled');
+    else nav.classList.remove('is-scrolled');
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
 </body>
 </html>
 

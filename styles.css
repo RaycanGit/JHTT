@@ -369,3 +369,43 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
   }
 }
 
+/* Shrinking sticky header */
+.nav{
+  transition: box-shadow .2s ease, background-color .2s ease;
+}
+
+.nav-inner{
+  transition: min-height .2s ease, height .2s ease, padding .2s ease;
+}
+
+/* Default (top of page) */
+.nav-inner{
+  min-height: 72px;
+}
+
+/* When scrolled */
+.nav.is-scrolled{
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.nav.is-scrolled .nav-inner{
+  min-height: 52px;
+  height: 52px;
+}
+
+/* Make links less bulky on mobile */
+@media (max-width: 768px){
+  .menu{
+    gap: 10px;
+  }
+  .menu a{
+    padding: 6px 4px;
+    font-size: 13px;
+  }
+  .brand img{
+    height: 26px;
+  }
+}
+
+
+
