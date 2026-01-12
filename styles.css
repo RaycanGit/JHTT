@@ -324,10 +324,7 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
 @media (prefers-reduced-motion: reduce){
   *{ scroll-behavior: auto !important; }
 }
-.hero .k {
-  color: #6096BA;
-  letter-spacing: 0.12em;
-}
+
 /* Exchange proof image */
 .exchange-proof {
   margin: 32px 0 40px;
@@ -340,6 +337,12 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
   border-radius: 4px;
   background: #FFFFFF;
 }
+
 .small {
   font-size: 13px;
+}
+
+.cards-3 .k{
+  color:#6096BA;
+  letter-spacing:0.12em;
 }
