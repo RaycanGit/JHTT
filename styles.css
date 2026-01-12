@@ -348,18 +348,24 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
 }
 
 @media (max-width: 768px){
+
+  /* Slimmer mobile nav (override desktop min-height) */
   .nav-inner{
+    min-height: 52px;   /* important: overrides min-height:72px */
     height: 52px;
+    gap: 10px;
   }
-  .brand img{
-    height: 26px;
-  }
-  .brand span{
-    font-size: 15px;
+
+  .brand img{ height: 26px; }
+  .brand span{ font-size: 15px; }
+
+  /* Tighten menu spacing (gap controls spacing, not margin-left) */
+  .menu{
+    gap: 10px;
   }
   .menu a{
-    margin-left: 12px;
     font-size: 13px;
+    padding: 6px 4px;   /* reduce bulky top/bottom padding */
   }
 }
 
