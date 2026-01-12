@@ -16,9 +16,21 @@
       <img src="assets/logo.png" alt="Jinghaitai Logo" />
       <span>Jinghaitai</span>
     </a>
-    <nav class="menu" aria-label="Primary">
-      <a href="index.html">Home</a>
-      <a class="active" href="operations.html">Operations & Delivery</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      Menu
+    </button>
+
+    <nav class="menu desktop-menu" aria-label="Primary">
+      <a class="active" href="index.html">Home</a>
+      <a href="operations.html">Operations & Delivery</a>
+      <a href="exchange.html">Exchange-Recognized Capability</a>
+      <a href="products.html">Products & Markets</a>
+      <a href="risk-contact.html">Risk Management & Contact</a>
+    </nav>
+
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Primary">
+      <a class="active" href="index.html">Home</a>
+      <a href="operations.html">Operations & Delivery</a>
       <a href="exchange.html">Exchange-Recognized Capability</a>
       <a href="products.html">Products & Markets</a>
       <a href="risk-contact.html">Risk Management & Contact</a>
@@ -118,17 +130,23 @@
 
 </main>
 <script>
-(function () {
-  const nav = document.querySelector('.nav');
-  if (!nav) return;
+(function(){
+  const btn = document.querySelector('.menu-toggle');
+  const panel = document.getElementById('mobile-menu');
+  if(!btn || !panel) return;
 
-  const onScroll = () => {
-    if (window.scrollY > 10) nav.classList.add('is-scrolled');
-    else nav.classList.remove('is-scrolled');
-  };
+  btn.addEventListener('click', function(){
+    const open = panel.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  // Close menu when clicking a link
+  panel.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      panel.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
 })();
 </script>
 </body>
