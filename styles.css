@@ -346,3 +346,20 @@ a:hover{ text-decoration: underline; text-underline-offset: 3px; }
   color:#6096BA;
   letter-spacing:0.12em;
 }
+
+@media (max-width: 768px){
+  .nav-inner{
+    height: 52px;
+  }
+  .brand img{
+    height: 26px;
+  }
+  .brand span{
+    font-size: 15px;
+  }
+  .menu a{
+    margin-left: 12px;
+    font-size: 13px;
+  }
+}
+
